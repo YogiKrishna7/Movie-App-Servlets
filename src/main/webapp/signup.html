@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        #main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            border-bottom: 2px solid black;
+        }
+
+        #main-header img {
+            width: 50px;
+            height: 50px;
+            border: 2px solid red;
+        }
+
+        #main-header button {
+            padding: 8px 16px;
+            margin: 0 5px;
+            border: 2px solid red;
+            background-color: white;
+            color: red;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #main-header button:hover {
+            background-color: red;
+            color: white;
+        }
+
+        /* Main Body Styles */
+        #main-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 100px);
+            background-color: #fdfdfd;
+        }
+
+        #form-section {
+            width: 300px;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #form-section h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #form-section form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        #form-section form input[type="text"],
+        #form-section form input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #form-section form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: black;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #form-section form input[type="submit"]:hover {
+            background-color: #444;
+        }
+
+        /* Footer Styles */
+        #main-footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-top: 2px solid black;
+        }
+
+        #main-footer p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main-header">
+        <img src="" alt="logo">
+        <div>
+            <button>Sign up</button>
+            <button>Login</button>
+        </div>
+    </header>
+    <main id="main-body">
+        <section id="form-section">
+            <h1>Sign Up</h1>
+            <form action="">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+                <label for="phone">Phone number</label>
+                <input type="text" id="phone" name="phone">
+                <label for="password">Create a password</label>
+                <input type="password" id="password" name="password">
+                <input type="submit" value="Sign Up">
+            </form>
+        </section>
+    </main>
+    <footer id="main-footer">
+        <p>&copy; My Movie Booker</p>
+    </footer>
+</body>
+
+</html>

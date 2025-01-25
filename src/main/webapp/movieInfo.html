@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Document</title>
+    <style>
+/* General Reset */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+#main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border-bottom: 2px solid black;
+}
+
+#main-header img {
+    width: 50px;
+    height: 50px;
+}
+
+#main-header input[type="text"] {
+    padding: 8px;
+    margin: 0 5px;
+    border: 2px solid red;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#main-header button {
+    padding: 8px 16px;
+    border: 2px solid black;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#main-header button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Main Body Styles */
+#main-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+}
+
+.card-container {
+    flex: 2; 
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 2px solid orange;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.box img {
+    width: 180px;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.box h4 {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.info {
+    text-align: left;
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 14px;
+    flex-grow: 1; 
+}
+
+/* Theatre Selection */
+#theatre-selection {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 15px; 
+}
+
+#theatre-selection button {
+    padding: 15px 20px; 
+    border: 2px solid black;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%; 
+    height: 50px; 
+}
+
+#theatre-selection button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Footer Styles */
+#main-footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-top: 2px solid black;
+}
+
+#main-footer p {
+    font-size: 14px;
+}
+    </style>
+    
+    
+    
+
+</head>
+
+<body>
+    <header id="main-header">
+        <img src="" alt="logo">
+        <input type="text" placeholder="Search Movie">
+        <input type="text" placeholder="Search Theatre">
+        <button>Profile</button>
+    </header>
+    <main id="main-body">
+        <div class="card-container">
+            <div class="box">
+                <img src="" alt="Movie 1 image">
+                <h4>Movie name:</h4>
+                <h4>Movie rating:</h4>
+            </div>
+            <br>
+            <div class="info">
+                <h4>Movie Info: </h4>
+                <h4>Movie Cast: </h4>
+            </div>
+        </div>
+        <div id="theatre-selection">
+            <h1>Select Theatres</h1>
+            <button>Theatre 1</button>
+            <br>
+            <button>Theatre 2</button>
+            <br>
+            <button>Theatre 3</button>
+        </div>
+    </main>
+    <footer id="main-footer">
+        <p>&copy; My Movie Booker</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header Styles */
+        #main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            border-bottom: 2px solid black;
+        }
+
+        #main-header img {
+            width: 50px;
+            height: 50px;
+            border: 2px solid red;
+        }
+
+        #main-header input[type="text"] {
+            padding: 8px;
+            margin: 0 5px;
+            border: 2px solid red;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        #main-header button {
+            padding: 8px 16px;
+            border: 2px solid black;
+            background-color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        #main-header button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Main Body Styles */
+        #main-body {
+            padding: 20px;
+        }
+
+        #main-showcase {
+            text-align: center;
+        }
+
+        #main-showcase h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .box {
+            border: 2px solid orange;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .box img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .box h4 {
+            margin: 5px 0;
+        }
+
+        /* Footer Styles */
+        #main-footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-top: 2px solid black;
+        }
+
+        #main-footer p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main-header">
+        <img src="" alt="Logo">
+        <input type="text" placeholder="Search movies">
+        <input type="text" placeholder="Search theatres">
+        <button>Profile</button>
+    </header>
+    <main id="main-body">
+        <section id="main-showcase">
+            <h1>Movies</h1>
+            <div class="card-container">
+                <div class="box">
+                    <img src="" alt="Movie 1 image">
+                    <h4>Movie Name: Movie 1</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+                <div class="box">
+                    <img src="" alt="Movie 2 image">
+                    <h4>Movie Name: Movie 2</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+                <div class="box">
+                    <img src="" alt="Movie 3 image">
+                    <h4>Movie Name: Movie 3</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+                <div class="box">
+                    <img src="" alt="Movie 4 image">
+                    <h4>Movie Name: Movie 4</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+                <div class="box">
+                    <img src="" alt="Movie 5 image">
+                    <h4>Movie Name: Movie 5</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+                <div class="box">
+                    <img src="" alt="Movie 6 image">
+                    <h4>Movie Name: Movie 6</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+                <div class="box">
+                    <img src="" alt="Movie 7 image">
+                    <h4>Movie Name: Movie 7</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+                <div class="box">
+                    <img src="" alt="Movie 8 image">
+                    <h4>Movie Name: Movie 8</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+                <div class="box">
+                    <img src="" alt="Movie 9 image">
+                    <h4>Movie Name: Movie 9</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+                <div class="box">
+                    <img src="" alt="Movie 10 image">
+                    <h4>Movie Name: Movie 10</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+                <div class="box">
+                    <img src="" alt="Movie 11 image">
+                    <h4>Movie Name: Movie 11</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+                <div class="box">
+                    <img src="" alt="Movie 12 image">
+                    <h4>Movie Name: Movie 12</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+                <div class="box">
+                    <img src="" alt="Movie 13 image">
+                    <h4>Movie Name: Movie 13</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+                <div class="box">
+                    <img src="" alt="Movie 14 image">
+                    <h4>Movie Name: Movie 14</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+                <div class="box">
+                    <img src="" alt="Movie 15 image">
+                    <h4>Movie Name: Movie 15</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+                <div class="box">
+                    <img src="" alt="Movie 16 image">
+                    <h4>Movie Name: Movie 16</h4>
+                    <h4>Movie Rating: ★★★★☆</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="main-footer">
+        <p>&copy; My Movie Booker</p>
+    </footer>
+</body>
+
+</html>
