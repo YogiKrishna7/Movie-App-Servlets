@@ -1,148 +1,156 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie info</title>
     <style>
-/* General Reset */
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9fafb;
+        }
 
-/* Header Styles */
-#main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f5f5f5;
-    border-bottom: 2px solid black;
-}
+        #main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #1f2937;
+            color: white;
+            border-bottom: 2px solid #ef4444;
+        }
 
-#main-header img {
-    width: 50px;
-    height: 50px;
-}
+        #main-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
 
-#main-header input[type="text"] {
-    padding: 8px;
-    margin: 0 5px;
-    border: 2px solid red;
-    border-radius: 5px;
-    font-size: 14px;
-}
+        #main-header input[type="text"] {
+            padding: 8px;
+            margin: 0 10px;
+            border: 2px solid #ef4444;
+            border-radius: 5px;
+            font-size: 14px;
+        }
 
-#main-header button {
-    padding: 8px 16px;
-    border: 2px solid black;
-    background-color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-}
+        #main-header button {
+            padding: 8px 16px;
+            border: 2px solid #ef4444;
+            background-color: white;
+            color: #ef4444;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-#main-header button:hover {
-    background-color: black;
-    color: white;
-}
+        #main-header button:hover {
+            background-color: #ef4444;
+            color: white;
+        }
 
-/* Main Body Styles */
-#main-body {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-    gap: 20px;
-}
+        #main-body {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 30px;
+            gap: 30px;
+        }
 
-.card-container {
-    flex: 2; 
-    display: flex;
-    flex-direction: column;
-}
+        .card-container {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
 
-.box {
-    flex: 1; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 2px solid orange;
-    border-radius: 10px;
-    text-align: center;
-}
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 2px solid #ef4444;
+            border-radius: 10px;
+            text-align: center;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-.box img {
-    width: 180px;
-    height: 250px;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
+        .box img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
 
-.box h4 {
-    margin: 5px 0;
-    font-size: 16px;
-}
+        .box h4 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
 
-.info {
-    text-align: left;
-    margin-top: 10px;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    font-size: 14px;
-    flex-grow: 1; 
-}
+        .info {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-/* Theatre Selection */
-#theatre-selection {
-    flex: 1;
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    gap: 15px; 
-}
+        #theatre-selection {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
 
-#theatre-selection button {
-    padding: 15px 20px; 
-    border: 2px solid black;
-    background-color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-    width: 100%; 
-    height: 50px; 
-}
+        #theatre-selection h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
 
-#theatre-selection button:hover {
-    background-color: black;
-    color: white;
-}
+        #theatre-selection button {
+            padding: 15px 20px;
+            border: 2px solid #ef4444;
+            background-color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+            width: 100%;
+            height: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-/* Footer Styles */
-#main-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #f5f5f5;
-    border-top: 2px solid black;
-}
+        #theatre-selection button:hover {
+            background-color: #ef4444;
+            color: white;
+        }
 
-#main-footer p {
-    font-size: 14px;
-}
+        #main-footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #1f2937;
+            color: white;
+            border-top: 2px solid #ef4444;
+        }
+
+        #main-footer p {
+            font-size: 14px;
+        }
     </style>
-    
-    
-    
-
 </head>
 
 <body>
@@ -152,6 +160,7 @@ body {
         <input type="text" placeholder="Search Theatre">
         <button>Profile</button>
     </header>
+
     <main id="main-body">
         <div class="card-container">
             <div class="box">
@@ -159,21 +168,20 @@ body {
                 <h4>Movie name:</h4>
                 <h4>Movie rating:</h4>
             </div>
-            <br>
             <div class="info">
                 <h4>Movie Info: </h4>
                 <h4>Movie Cast: </h4>
             </div>
         </div>
+
         <div id="theatre-selection">
             <h1>Select Theatres</h1>
             <button>Theatre 1</button>
-            <br>
             <button>Theatre 2</button>
-            <br>
             <button>Theatre 3</button>
         </div>
     </main>
+
     <footer id="main-footer">
         <p>&copy; My Movie Booker</p>
     </footer>

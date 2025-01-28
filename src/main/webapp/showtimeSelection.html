@@ -1,43 +1,312 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    <title>Document</title>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f9fafb;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .logo-search {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex: 1;
+        }
+
+        .logo {
+            color: #dc2626;
+            font-size: 2rem;
+            width: 40px;
+        }
+
+        .search-container {
+            display: flex;
+            gap: 1rem;
+            max-width: 32rem;
+            flex: 1;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #dc2626;
+            box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+        }
+
+        .profile-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            background-color: white;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .profile-btn:hover {
+            background-color: #f9fafb;
+        }
+
+        main {
+            flex: 1;
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+
+        .movie-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .movie-poster {
+            background-color: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .movie-poster img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .movie-poster-info {
+            padding: 1rem;
+        }
+
+        .movie-info {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .movie-info h3 {
+            margin-bottom: 1rem;
+        }
+
+        .movie-info p {
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .theatre-section {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .theatre-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .date-selection,
+        .time-selection {
+            margin-bottom: 2rem;
+        }
+
+        .date-selection h3,
+        .time-selection h3 {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .date-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .date-input:focus {
+            outline: none;
+            border-color: #dc2626;
+            box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+        }
+
+        .time-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .time-btn {
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            background-color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .time-btn:hover {
+            border-color: #dc2626;
+            color: #dc2626;
+        }
+
+        .time-btn.selected {
+            background-color: #dc2626;
+            color: white;
+            border-color: #dc2626;
+        }
+
+        .continue-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #dc2626;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .continue-btn:hover {
+            background-color: #b91c1c;
+        }
+
+        footer {
+            background-color: white;
+            border-top: 1px solid #e5e7eb;
+            padding: 1rem;
+            text-align: center;
+            color: #4b5563;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
 <body>
-    <header id="main-header">
-        <img src="" alt="logo">
-        <input type="text" placeholder="Search Movie">
-        <input type="text" placeholder="Search Theatre">
-        <button>Profile</button>
+    <header>
+        <div class="header-content">
+            <div class="logo-search">
+                <div class="logo">🎬</div>
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search movies">
+                    </div>
+                    <div class="search-box">
+                        <input type="text" placeholder="Search theatres">
+                    </div>
+                </div>
+            </div>
+            <button class="profile-btn">
+                👤 Profile
+            </button>
+        </div>
     </header>
-    <main id="main-body">
-        <div class="card-container">
-            <div class="box">
-                <img src="" alt="Movie 1 image">
-                <h4>Movie name:</h4>
-                <h4>Movie rating:</h4>
+
+    <main>
+        <div class="content-grid">
+            <div class="movie-section">
+                <div class="movie-poster">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80" alt="Movie Poster">
+                    <div class="movie-poster-info">
+                        <h3>Movie Title</h3>
+                        <p>Rating: 4.5/5</p>
+                    </div>
+                </div>
+                <div class="movie-info">
+                    <h3>Movie Info</h3>
+                    <p>
+                        Duration: 2h 30min<br>
+                        Genre: Action, Adventure<br>
+                        Director: John Doe<br>
+                        Cast: Jane Smith, Mike Johnson
+                    </p>
+                </div>
             </div>
-            <br>
-            <div class="info">
-                <h4>Movie name:</h4>
-                <h4>Movie rating:</h4>
+
+            <div class="theatre-section">
+                <h2>Theatre Name</h2>
+                
+                <div class="date-selection">
+                    <h3>Select Date:</h3>
+                    <input type="date" class="date-input">
+                </div>
+
+                <div class="time-selection">
+                    <h3>Select Show Times:</h3>
+                    <div class="time-grid">
+                        <button class="time-btn">10:00 AM</button>
+                        <button class="time-btn">2:00 PM</button>
+                        <button class="time-btn">6:00 PM</button>
+                        <button class="time-btn">9:00 PM</button>
+                    </div>
+                </div>
+
+                <button class="continue-btn">Continue</button>
             </div>
         </div>
-        <div id="theatre-selection">
-            <h4>Theatre: </h4>
-            <br>
-            <h4>Select Date:</h4>
-            <button>Theatre 1</button>
-            <br>
-            <h4>Select Show Times:</h4>
-            <button>Theatre 2</button>
-        </div>
-        <button>Continue</button>
     </main>
-    <footer id="main-footer">
-        <p>&copy; My Movie Booker</p>
+
+    <footer>
+        <p>&copy; 2024 My Movie Booker</p>
     </footer>
 </body>
-
 </html>

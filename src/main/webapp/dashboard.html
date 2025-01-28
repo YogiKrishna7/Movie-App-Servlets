@@ -6,105 +6,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9fafb;
+    color: #333;
+}
 
-        /* Header Styles */
-        #main-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #f5f5f5;
-            border-bottom: 2px solid black;
-        }
+#main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1f2937;
+    color: white;
+    border-bottom: 2px solid #ef4444;
+}
 
-        #main-header img {
-            width: 50px;
-            height: 50px;
-            border: 2px solid red;
-        }
+#main-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ef4444;
+}
 
-        #main-header input[type="text"] {
-            padding: 8px;
-            margin: 0 5px;
-            border: 2px solid red;
-            border-radius: 5px;
-            font-size: 14px;
-        }
+#main-header input[type="text"] {
+    padding: 8px;
+    margin: 0 5px;
+    border: 2px solid #ef4444;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
 
-        #main-header button {
-            padding: 8px 16px;
-            border: 2px solid black;
-            background-color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 10px;
-        }
+#main-header input[type="text"]:focus {
+    border-color: #dc2626;
+    outline: none;
+}
 
-        #main-header button:hover {
-            background-color: black;
-            color: white;
-        }
+#main-header button {
+    padding: 8px 16px;
+    border: 2px solid #ef4444;
+    background-color: #ef4444;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
 
-        /* Main Body Styles */
-        #main-body {
-            padding: 20px;
-        }
+#main-header button:hover {
+    background-color: #dc2626;
+}
 
-        #main-showcase {
-            text-align: center;
-        }
+#main-body {
+    padding: 20px;
+}
 
-        #main-showcase h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
+#main-showcase {
+    text-align: center;
+}
 
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 10px;
-        }
+#main-showcase h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #1f2937;
+}
 
-        .box {
-            border: 2px solid orange;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-        }
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 10px;
+}
 
-        .box img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
+.box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 350px;
+}
 
-        .box h4 {
-            margin: 5px 0;
-        }
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
 
-        /* Footer Styles */
-        #main-footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #f5f5f5;
-            border-top: 2px solid black;
-        }
+.box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
 
-        #main-footer p {
-            font-size: 14px;
-        }
+.box h4 {
+    font-size: 18px;
+    color: #4b5563;
+    margin: 5px 0;
+}
+
+.box .rating {
+    font-size: 16px;
+    color: #ef4444;
+}
+
+#main-footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1f2937;
+    color: white;
+    font-size: 14px;
+}
+
+#main-footer p {
+    margin-top: 5px;
+}
+
     </style>
 </head>
 

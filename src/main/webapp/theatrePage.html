@@ -1,54 +1,309 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    <title>Document</title>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        #main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #1f2937;
+            color: white;
+            border-bottom: 3px solid #ef4444;
+        }
+
+        #main-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        #main-header input[type="text"] {
+            padding: 8px 12px;
+            margin: 0 10px;
+            border: 2px solid #ef4444;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 200px;
+        }
+
+        #main-header button {
+            padding: 10px 18px;
+            border: 2px solid #ef4444;
+            background-color: white;
+            color: #ef4444;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #main-header button:hover {
+            background-color: #ef4444;
+            color: white;
+        }
+
+        #main-body {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 40px 30px;
+            gap: 40px;
+        }
+
+        .card-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .box-theatre {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 2px solid #ef4444;
+            border-radius: 12px;
+            text-align: center;
+            background-color: white;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            width: 480px;
+            height: 250px;
+            transition: box-shadow 0.3s;
+        }
+
+        .box-theatre img {
+            width: 210px;
+            height: 210px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .info {
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 480px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #theatre-selection {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        #theatre-selection h1 {
+            font-size: 28px;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #theatre-selection button {
+            padding: 15px 20px;
+            border: 2px solid #ef4444;
+            background-color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 12px;
+            width: 100%;
+            height: 55px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #theatre-selection button:hover {
+            background-color: #ef4444;
+            color: white;
+        }
+
+        #main-footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1f2937;
+            color: white;
+            border-top: 3px solid #ef4444;
+        }
+
+        #main-footer p {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .movie-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+            margin-left: 20px;
+        }
+
+        .box-movie {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 2px solid #ef4444;
+            border-radius: 12px;
+            text-align: center;
+            background-color: white;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            width: 270px;
+            height: 330px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box-movie img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .box-movie h4 {
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #movie-selection button {
+            padding: 10px 18px;
+            border: 2px solid #ef4444;
+            background-color: #ef4444;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 12px;
+            width: 60%;
+            height: 45px;
+            margin: 20px auto;
+            display: block;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        }
+
+        #movie-selection button:hover {
+            background-color: white;
+            color: #ef4444;
+            transform: scale(1.05);
+        }
+
+        .box-movie:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        #movie-selection h4 {
+            margin-left: 0px;
+            margin-bottom: 20px;
+        }
+
+        .continue-btn {
+            padding: 10px 18px;
+            border: 2px solid #ef4444;
+            background-color: #ef4444;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 12px;
+            width: 60%;
+            height: 45px;
+            margin: 20px auto;
+            display: block;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        }
+
+        .continue-btn:hover {
+            background-color: white;
+            color: #ef4444;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            #main-body {
+                flex-direction: column;
+            }
+
+            .box-theatre,
+            .info {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
 <body>
     <header id="main-header">
-        <img src="" alt="logo">
-        <input type="text" placeholder="Search Movie">
-        <input type="text" placeholder="Search Theatre">
-        <button>Profile</button>
+        <div class="logo">🎬</div>
+        <input type="text" placeholder="Search movies">
+        <input type="text" placeholder="Search theatres">
+        <button>👤 Profile</button>
     </header>
+
     <main id="main-body">
         <div class="card-container">
-            <div class="box">
-                <img src="" alt="Movie 1 image">
-                <h4>Theatre name:</h4>
+            <div class="box-theatre">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80" alt="Movie Poster">
+                <h4>Movie Title</h4>
+                <p>Rating: 4.5/5</p>
             </div>
-            <br>
             <div class="info">
-                <h4>Theatre name:</h4>
-                <h4>Theatre location:</h4>
-            </div>
-        </div>
-        <div id="movie-selection">
-            <h4>Select Movies: </h4>
-            <br>
-            <div class="card-container">
-                <div class="box">
-                    <img src="" alt="Movie 1 image">
-                    <h4>Movie name:</h4>
-                    <h4>Movie rating:</h4>
-                </div>
-                <div class="box">
-                    <img src="" alt="Movie 2 image">
-                    <h4>Movie name:</h4>
-                    <h4>Movie rating:</h4>
-                </div>
-                <div class="box">
-                    <img src="" alt="Movie 3 image">
-                    <h4>Movie name:</h4>
-                    <h4>Movie rating:</h4>
+                <div>
+                    <h3>Movie Info</h3>
+                    <p>
+                        Duration: 2h 30min<br>
+                        Genre: Action, Adventure<br>
+                        Director: John Doe<br>
+                        Cast: Jane Smith, Mike Johnson
+                    </p>
                 </div>
             </div>
         </div>
-        <button>Continue</button>
+
+        <div id="theatre-selection">
+            <h1>Theatre Name</h1>
+            <h4>Select Date:</h4>
+            <input type="date" style="width: 100%; padding: 15px; border: 2px solid #ef4444; border-radius: 12px;">
+            <h4>Select Show Times:</h4>
+            <button>10:00 AM</button>
+            <button>2:00 PM</button>
+            <button>6:00 PM</button>
+            <button>9:00 PM</button>
+            <button class="continue-btn">Continue</button>
+        </div>
     </main>
+
     <footer id="main-footer">
-        <p>&copy; My Movie Booker</p>
+        <p>&copy; 2024 My Movie Booker</p>
     </footer>
 </body>
-
 </html>
