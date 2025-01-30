@@ -45,6 +45,11 @@ public class LoginServlet extends HttpServlet {
 
 //	 			  	So when we use the cookies, we can use sendRedirect method so the to ensure cookies are sent back to the server in a new request.
 //	              	RequestDispatcher.forward only for internal navigation when cookies or a new request lifecycle are not required.
+					
+					
+//					Use RequestDispatcher.forward() for internal navigation within the same request lifecycle, 
+//					but avoid it when setting cookies since they won't reach the client. Instead, use response.sendRedirect(), 
+//					which triggers a new request where cookies are sent and available in the target servlet.
 
 					response.sendRedirect("dashboard");
 				}

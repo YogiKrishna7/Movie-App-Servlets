@@ -1,5 +1,6 @@
 package movie.app;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
@@ -7,6 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 @WebServlet("/dashboard")
@@ -74,6 +76,13 @@ public class DashboardServlet extends HttpServlet {
 			response.sendRedirect("index.html");
 			return;
 		}
+		
+		// Servlet Context
+//		ServletContext sc = getServletContext();
+//		String name = sc.getInitParameter("Name");
+//		
+//		PrintWriter out = response.getWriter();
+//		out.print("Hello " + name);
 		
 		request.setAttribute("movieList", movieList);
 	    request.getRequestDispatcher("homepage.jsp").forward(request, response);
