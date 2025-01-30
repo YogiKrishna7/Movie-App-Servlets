@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="movie.app.Movie" %>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Movie Booking - Thank You</title>
     <style>
         * {
             margin: 0;
@@ -16,11 +14,14 @@
         }
 
         body {
-            background-color: #f5f5f5;
+            background-color: #f9fafb;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            width: 100%;
+            justify-content: center;
             align-items: center;
+            text-align: center;
         }
 
         header {
@@ -59,32 +60,32 @@
             cursor: pointer;
         }
 
-        .content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 70px;
-            padding: 40px;
-            width: fit-content;
-            margin: 0 auto;
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
         }
 
-        .box {
-            width: 200px;
-            height: 250px;
-            border: 2px solid orange;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-size: 18px;
+        .thank-you-message {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .home-button {
+            padding: 15px 25px;
             font-weight: bold;
             cursor: pointer;
-            text-decoration: none;
-            color: black;
+            border: 2px solid black;
+            background: white;
+            margin-top: 20px;
         }
 
-        .box:hover {
+        .home-button:hover {
             background-color: red;
             color: white;
         }
@@ -95,7 +96,8 @@
             background: white;
             border-top: 2px solid black;
             width: 100%;
-            margin-top: auto;
+            position: absolute;
+            bottom: 0;
         }
     </style>
 </head>
@@ -110,22 +112,10 @@
         <button class="profile-btn">Profile</button>
     </header>
 
-    <div class="content">
-        <%
-            ArrayList<Movie> movieList = (ArrayList<Movie>) request.getAttribute("movieList");
-            if (movieList != null) {
-                for (Movie movie : movieList) {
-        %>
-        <a href="movieInfo.jsp" class="box">
-            <%= movie.getMovieName() %>
-        </a>
-        <%
-                }
-            } else {
-                response.getWriter().print("Movies Not Available");
-            }
-        %>
-    </div>
+    <main>
+        <h2 class="thank-you-message">Thank You for Your Booking!</h2>
+        <button class="home-button">Go to Home</button>
+    </main>
 
     <footer>
         <p>&copy; 2024 My Movie Booker</p>

@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
 //					but avoid it when setting cookies since they won't reach the client. Instead, use response.sendRedirect(), 
 //					which triggers a new request where cookies are sent and available in the target servlet.
 
-					response.sendRedirect("dashboard");
+					response.sendRedirect("homepage");
 				}
 			}
 		}

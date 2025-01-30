@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-@WebServlet("/dashboard")
-public class DashboardServlet extends HttpServlet {
+@WebServlet("/homepage")
+public class HomepageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private ArrayList<Movie> movieList = new ArrayList<>();
@@ -73,7 +73,7 @@ public class DashboardServlet extends HttpServlet {
 
 		if (!isAuthenticated) {
 			response.getWriter().println("Not authenticated. Redirecting to login...");
-			response.sendRedirect("index.html");
+			response.sendRedirect("index.jsp");
 			return;
 		}
 		
