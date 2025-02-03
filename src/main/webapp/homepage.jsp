@@ -26,7 +26,7 @@
             if (movieList != null) {
                 for (Movie movie : movieList) {
         %>
-        <a href="movieInfo.jsp" class="box">
+        <a href="#" class="box">
             <%= movie.getMovieName() %>
         </a>
         <%
