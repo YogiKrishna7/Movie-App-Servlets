@@ -105,12 +105,13 @@ public class HomepageServlet extends HttpServlet {
 			while (rs.next()) {
 
 				String movieUrl = rs.getString("movieUrl");
-				String movieName = rs.getString("movieName");
-				String movieRating = rs.getString("movieRating");
-				String releaseYear = rs.getString("releaseYear");
-				double duration = rs.getDouble("duration");
+                String movieTitle = rs.getString("title");
+                String movieDescription = rs.getString("description");
+                String movieGenre = rs.getString("genre");
+                int releaseYear = rs.getInt("release_year");
+                double duration = rs.getDouble("duration");
 
-				movieList.add(new Movie(movieUrl, movieName, movieRating, releaseYear, duration));
+                movieList.add(new Movie(movieUrl, movieTitle, movieDescription, movieGenre, releaseYear, duration));
 			}
 
 		} catch (Exception e) {

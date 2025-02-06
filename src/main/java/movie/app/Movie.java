@@ -1,59 +1,69 @@
 package movie.app;
 
 public class Movie {
-	private String movieUrl;
-	private String movieName;
-	private String movieRating;
-	private String releaseYear;
-	private double duration;
+    private String movieUrl;
+    private String title;
+    private String description;
+    private String genre;
+    private int releaseYear;
+    private double duration;
 
-	public Movie(String movieUrl, String movieName, String movieRating, String releaseYear, double duration) {
-		super();
-		this.movieUrl = movieUrl;
-		this.movieName = movieName;
-		this.movieRating = movieRating;
-		this.releaseYear = releaseYear;
-		this.duration = duration;
-	}
+    // Constructor
+    public Movie(String movieUrl, String title, String description, String genre, int releaseYear, double duration) {
+        this.movieUrl = movieUrl;
+        this.title = title;
+        this.description = description;
+        this.genre = genre;
+        this.releaseYear = releaseYear;
+        this.duration = duration;
+    }
 
-	public String getMovieUrl() {
-		return movieUrl;
-	}
+    // Getters and Setters
+    public String getMovieUrl() {
+        return movieUrl;
+    }
 
-	public void setMovieUrl(String movieUrl) {
-		this.movieUrl = movieUrl;
-	}
+    public void setMovieUrl(String movieUrl) {
+        this.movieUrl = movieUrl;
+    }
 
-	public String getMovieName() {
-		return movieName;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setMovieName(String movieName) {
-		this.movieName = movieName;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public String getMovieRating() {
-		return movieRating;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setMovieRating(String movieRating) {
-		this.movieRating = movieRating;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public String getReleaseYear() {
-		return releaseYear;
-	}
+    public String getGenre() {
+        return genre;
+    }
 
-	public void setReleaseYear(String releaseYear) {
-		this.releaseYear = releaseYear;
-	}
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
 
-	public double getDuration() {
-		return duration;
-	}
+    public int getReleaseYear() {
+        return releaseYear;
+    }
 
-	public void setDuration(double duration) {
-		this.duration = duration;
-	}
+    public void setReleaseYear(int releaseYear) {
+        this.releaseYear = releaseYear;
+    }
 
+    public double getDuration() {
+        return duration;
+    }
+
+    public void setDuration(double duration) {
+        this.duration = duration;
+    }
 }
