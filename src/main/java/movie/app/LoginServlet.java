@@ -36,8 +36,8 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String phone = request.getParameter("phone");
-		String password = request.getParameter("password");
+		String phoneNumber = request.getParameter("phone");
+		String pass = request.getParameter("password");
 
 //		for (User user : userList) {
 //			if (user.getPhoneNumber().equals(phone)) {
@@ -71,14 +71,14 @@ public class LoginServlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			try (Connection con = DriverManager.getConnection(url, db_username, db_password);
-					PreparedStatement ps = con.prepareStatement("select * from Users where userPhone = ? and userPassword = ?")) {
+					PreparedStatement ps = con.prepareStatement("select * from Users where phone = ? and password = ?")) {
 
-				ps.setString(1, phone);
-				ps.setString(2, password);
+				ps.setString(1, phoneNumber);
+				ps.setString(2, pass);
 
 				ResultSet rs = ps.executeQuery();
 				if (rs.next()) {
-					Cookie loginCookie = new Cookie("user", phone);
+					Cookie loginCookie = new Cookie("user", phoneNumber);
 					loginCookie.setMaxAge(3600);
 					response.addCookie(loginCookie);
 					

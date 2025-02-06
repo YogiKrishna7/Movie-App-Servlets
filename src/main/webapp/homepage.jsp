@@ -27,7 +27,7 @@
                 for (Movie movie : movieList) {
         %>
         <a href="#" class="box">
-            <%= movie.getMovieName() %>
+            <%= movie.getTitle() %>
         </a>
         <%
                 }

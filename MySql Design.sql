@@ -17,6 +17,8 @@ VALUES
 ('def', '1234567891', 'def@example.com', '1234'),
 ('ghi', '1234567892', 'ghi@example.com', '12345');
 
+select * from Users;
+
 CREATE TABLE Payment_Methods (
     payment_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
@@ -43,8 +45,14 @@ VALUES
 ('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSrEnW4Qes8q3NiwQS3grDaqN5ENSQdFTik1C2fdEeSAXTDQAzs', 'Kung Fu Panda 2', 'The sequel to Kung Fu Panda, where Po faces a new challenge.', 'Animation', 120, 2011),
 ('https://lumiere-a.akamaihd.net/v1/images/image_0e6ad10d.jpeg?region=0%2C0%2C1400%2C2100', 'Kung Fu Panda 3', 'Po reunites with his biological father and must stop a villain.', 'Animation', 120, 2015),
 ('https://assets.gadgets360cdn.com/pricee/assets/product/202311/Kung-Fu-Panda-4-Poster_1700827659.jpg', 'Kung Fu Panda 4', 'The latest installment where Po faces a new adventure.', 'Animation', 90, 2024),
-('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTJOxjD49uzIVF4gBVI_eopbb0AS53-Ta-wExU2C8s8hlDN5UQs-fXihh4AYxJnwh2ShJNj', 'Die Hard 4', 'The fourth installment of the Die Hard series, with John McClane.', 'Action', 90, 2007),
-('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQUuM488ffxIbhzFEUA-rimo81Gmbnfo1R1n_XH8ga09-Fy5W2rG3NcKESX0UorZrXEBVzq_Q', 'Mr. Bean', 'The comedic adventures of Mr. Bean.', 'Comedy', 90, 2008);
+('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTJOxjD49uzIVF4gBVI_eopbb0AS53-Ta-wExU2C8s8hlDN5UQs-fXihh4AYxJnwh2ShJNj', 'Die Hard 4', 'The fourth installment of the Die Hard series, with John McClane.', 'Action', 128, 2007),
+('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQUuM488ffxIbhzFEUA-rimo81Gmbnfo1R1n_XH8ga09-Fy5W2rG3NcKESX0UorZrXEBVzq_Q', 'Mr. Bean', 'The comedic adventures of Mr. Bean.', 'Comedy', 90, 1997),
+("https://m.media-amazon.com/images/I/91vIHsL-zjL.jpg", "Interstellar", "A team of explorers travels through a wormhole in space in an attempt to ensure humanity's survival.", "Science Fiction", 169, 2014),
+("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcROqmrMVzOXm78bp2aJec_ZFj5qXEnRLZAiCFXTxygy7w_f1d-k2GJ0kwuqhRVxIUkut4vSJQ", "Alien", "The crew of a commercial spaceship encounters a deadly lifeform.", "Science Fiction Horror", 117, 1979),
+("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRNF36FavofYcx1JFn6em8xKWcHYqu5dBg-TeB_I_FWIwrqsw2WxE3BDy13Y6q9XavceWwYGA", "Aliens", "Ellen Ripley returns to face the alien queen.", "Science Fiction Action", 154, 1986),
+("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTMQp_9_bE2JOeH4JtApxU0rDthouxCNR_TvZ3c-mb8FROFwS3PWXTLeLUEpnBA7TpT7k3x", "Cars", "Lightning McQueen learns about friendship and racing.", "Animation", 116, 2006),
+("https://www.sonypictures.com/sites/default/files/styles/max_560x840/public/chameleon/title-movie/244665_open_season_2006_1400x2100.jpg?itok=YLszgqmY", "Open Season", "Boog, a domesticated grizzly bear, and Elliot, a one-antlered mule deer, team up to rally all the forest animals and fight back against the hunters.", "Animated Comedy", 86, 2006), # Added Description, Genre, Runtime, Year
+("https://lumiere-a.akamaihd.net/v1/images/p_walle_19753_69f7ff00.jpeg?region=0%2C0%2C540%2C810", "Wall E", "In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind.", "Animation, Science Fiction", 98, 2008);
 
 CREATE TABLE Theatres (
     theatre_id INT PRIMARY KEY AUTO_INCREMENT,
